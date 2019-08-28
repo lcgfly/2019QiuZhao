@@ -57,17 +57,17 @@
     //中序遍历(左根右) 第一个节点为最小节点 最后一个节点为最大节点
     function midSearch(node) {
         if (node !== null) {
-            frontSearch(node.left);
+            midSearch(node.left);
             console.log(node.show());
-            frontSearch(node.right);
+            midSearch(node.right);
         }
     }
 
     //后序遍历(左右根) 最后一个节点为根节点
     function backSearch(node) {
         if (node !== null) {
-            frontSearch(node.left);
-            frontSearch(node.right);
+            backSearch(node.left);
+            backSearch(node.right);
             console.log(node.show());
         }
     }
