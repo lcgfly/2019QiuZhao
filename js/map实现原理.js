@@ -14,6 +14,6 @@
 
        var demo=[1,2,3,4,5];
        var ret = demo.myMap((value,index)=>{
-           return value=value+index;
+           return value+index;
        })
        console.log(ret);       //[1, 3, 5, 7, 9]
