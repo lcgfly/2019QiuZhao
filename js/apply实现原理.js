@@ -1,5 +1,5 @@
 //apply方法实现原理
-        Function.prototype.myCall=function(context,arr){
+        Function.prototype.myApply=function(context,arr){
             context = context?Object(context):window;
             context.fn=this;
             
@@ -16,4 +16,4 @@
         }
         var a={};
         a.name='lyj';
-        demo.myCall(a,[1,2]);  //lyj 1 2
+        demo.myApply(a,[1,2]);  //lyj 1 2
