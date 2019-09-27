@@ -6,6 +6,9 @@
             if(arr.length>0){
                 return context.fn(...arr);
             }
+             else{
+                return context.fn();           
+            }
         }
 
         function demo(n1,n2){
