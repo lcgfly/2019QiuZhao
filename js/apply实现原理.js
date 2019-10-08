@@ -1,12 +1,13 @@
 //apply方法实现原理
         Function.prototype.myApply=function(context,arr){
             context = context?Object(context):window;
-            context.fn=this;
+            var fn=Symbol();
+            context[fn]=this;
             
             if(arr){
-                return context.fn(...arr);
+                return context[fn](...arr);
             }else{
-                return context.fn();
+                return context[fn]();
             }
         }
 
