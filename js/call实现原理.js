@@ -1,13 +1,14 @@
 //call方法实现原理
         Function.prototype.myCall=function(context){
             context = context?Object(context):window;  //null或undefined则指向window
-            context.fn=this;
+            var fn=Symbol();
+            context[fn]=this;
             var arr = [...arguments].slice(1);
             if(arr.length>0){
-                return context.fn(...arr);
+                return context[fn](...arr);
             }
              else{
-                return context.fn();           
+                return context[fn]();           
             }
         }
 
